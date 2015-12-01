@@ -72,7 +72,6 @@
 					<div class="lead">
 						<p>An object which implements the command pattern.</p>
 					</div>
-					<p><strong>See also:</strong> <a href="https://en.wikipedia.org/wiki/Command_pattern">https://en.wikipedia.org/wiki/Command_pattern</a></p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -96,15 +95,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#caption" class="tsd-kind-icon">caption</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#disabled" class="tsd-kind-icon">disabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#disabledchanged" class="tsd-kind-icon">disabled<wbr>Changed</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#canexecutechanged" class="tsd-kind-icon">can<wbr>Execute<wbr>Changed</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="icommand.html#canexecute" class="tsd-kind-icon">can<wbr>Execute</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="icommand.html#execute" class="tsd-kind-icon">execute</a></li>
 							</ul>
 						</section>
@@ -114,47 +111,9 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="caption" class="tsd-anchor"></a>
-					<h3>caption</h3>
-					<div class="tsd-signature tsd-kind-icon">caption<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L46">index.ts:46</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A read-only single-line description of the command.</p>
-						</div>
-						<h4 id="notes">Notes</h4>
-						<p>The caption will be used by some UIs to show a description of
-						the command to the user.</p>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="disabled" class="tsd-anchor"></a>
-					<h3>disabled</h3>
-					<div class="tsd-signature tsd-kind-icon">disabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L59">index.ts:59</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>Whether the command is currently disabled.</p>
-						</div>
-						<h4 id="notes">Notes</h4>
-						<p>A disabled command cannot be executed.</p>
-						<p>This will be read-only for some commands, and read-write for
-						others as appropriate.</p>
-						<p><strong>See also:</strong> <a href="icommand.html#disabledchanged">disabledChanged</a></p>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="disabledchanged" class="tsd-anchor"></a>
-					<h3>disabled<wbr>Changed</h3>
-					<div class="tsd-signature tsd-kind-icon">disabled<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ISignal</span><span class="tsd-signature-symbol">&lt;</span><a href="icommand.html" class="tsd-signature-type">ICommand</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="canexecutechanged" class="tsd-anchor"></a>
+					<h3>can<wbr>Execute<wbr>Changed</h3>
+					<div class="tsd-signature tsd-kind-icon">can<wbr>Execute<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ISignal</span><span class="tsd-signature-symbol">&lt;</span><a href="icommand.html" class="tsd-signature-type">ICommand</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
 							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L28">index.ts:28</a></li>
@@ -162,55 +121,87 @@
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A signal emitted when the command&#39;s <a href="icommand.html#disabled">disabled</a> state changes.</p>
+							<p>A signal emitted when the command&#39;s <a href="icommand.html#canexecute">canExecute</a> state changes.</p>
 						</div>
 						<h4 id="notes">Notes</h4>
-						<p>The signal arg is the current <code>disabled</code> state of the command.</p>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="id" class="tsd-anchor"></a>
-					<h3>id</h3>
-					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L37">index.ts:37</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A read-only unique identifier for the Command.</p>
-						</div>
-						<h4 id="notes">Notes</h4>
-						<p>The recommended id format is lower-cased, hyphen-separated,
-						and colon-namespaced: <code>&#39;my-project-namespace:my-command-id&#39;</code>.</p>
+						<p>Consumers of the command can subscribe to this signal in order to
+							know when to re-query for the current executable state and update
+						their visual representations accordingly.</p>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="execute" class="tsd-anchor"></a>
-					<h3>execute</h3>
+					<a name="canexecute" class="tsd-anchor"></a>
+					<h3>can<wbr>Execute</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">execute<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">can<wbr>Execute<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L69">index.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L44">index.ts:44</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>A method called to execute the command.</p>
+									<p>Test whether the command can execute in its current state.</p>
 								</div>
-								<h4 id="notes">Notes</h4>
-								<p>If this method is invoked when the command is disabled, it must
-									be a no-op. Preferably, the command implementation will log an
-								appropriate error message when this occurs.</p>
 							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The proposed arguments for the command. These should
+											be simple JSON types. If the command does not require arguments,
+										this may be <code>null</code>.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the command can execute with the given args,
+							<code>false</code> otherwise.</p>
+							<h4 id="notes">Notes</h4>
+							<p>When the potential result of this method changes at runtime, the
+							<a href="icommand.html#canexecutechanged">canExecuteChanged</a> signal should be emitted.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="execute" class="tsd-anchor"></a>
+					<h3>execute</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">execute<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L57">index.ts:57</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Execute the command with the specified arguments.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>args: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The arguments for the command. These should be
+											simple JSON types. If the command does not require arguments,
+										this may be <code>null</code>.</p>
+										<h4 id="notes">Notes</h4>
+										<p>Calling <code>execute</code> when <code>canExecute</code> returns <code>false</code> will result
+										in undefined behavior.</p>
+									</div>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -236,16 +227,10 @@
 						<a href="icommand.html" class="tsd-kind-icon">ICommand</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="icommand.html#caption" class="tsd-kind-icon">caption</a>
+								<a href="icommand.html#canexecutechanged" class="tsd-kind-icon">can<wbr>Execute<wbr>Changed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="icommand.html#disabled" class="tsd-kind-icon">disabled</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="icommand.html#disabledchanged" class="tsd-kind-icon">disabled<wbr>Changed</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="icommand.html#id" class="tsd-kind-icon">id</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="icommand.html#canexecute" class="tsd-kind-icon">can<wbr>Execute</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="icommand.html#execute" class="tsd-kind-icon">execute</a>
@@ -254,9 +239,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface">
-						<a href="idelegatecommandoptions.html" class="tsd-kind-icon">IDelegate<wbr>Command<wbr>Options</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
