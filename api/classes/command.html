@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DelegateCommand | phosphor-command</title>
+	<title>Command | phosphor-command</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,10 +57,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="delegatecommand.html">DelegateCommand</a>
+					<a href="command.html">Command</a>
 				</li>
 			</ul>
-			<h1>Class DelegateCommand</h1>
+			<h1>Class Command</h1>
 		</div>
 	</div>
 </header>
@@ -70,20 +70,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A concrete implementation of <a href="../interfaces/icommand.html">ICommand</a>.</p>
+						<p>An abstract base class for implementing concrete commands.</p>
 					</div>
-					<p>A <code>DelegateCommand</code> wraps a function to facilitate the creation of
-					simple commands without requiring subclassing or extra boilerplate.</p>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="command.html" class="tsd-signature-type">Command</a>
+						<span class="target">Command</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">DelegateCommand</span>
+								<a href="delegatecommand.html" class="tsd-signature-type">DelegateCommand</a>
 							</li>
 						</ul>
 					</li>
@@ -102,33 +100,29 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="delegatecommand.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="command.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="delegatecommand.html#_checked" class="tsd-kind-icon">_checked</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="delegatecommand.html#_enabled" class="tsd-kind-icon">_enabled</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="delegatecommand.html#_execute" class="tsd-kind-icon">_execute</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="delegatecommand.html#changedsignal" class="tsd-kind-icon">changed<wbr>Signal</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="command.html#_id" class="tsd-kind-icon">_id</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="command.html#changedsignal" class="tsd-kind-icon">changed<wbr>Signal</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="delegatecommand.html#changed" class="tsd-kind-icon">changed</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="delegatecommand.html#checked" class="tsd-kind-icon">checked</a></li>
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="delegatecommand.html#enabled" class="tsd-kind-icon">enabled</a></li>
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="delegatecommand.html#id" class="tsd-kind-icon">id</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="command.html#changed" class="tsd-kind-icon">changed</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="command.html#id" class="tsd-kind-icon">id</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="delegatecommand.html#execute" class="tsd-kind-icon">execute</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="delegatecommand.html#ischecked" class="tsd-kind-icon">is<wbr>Checked</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="delegatecommand.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="command.html#execute" class="tsd-kind-icon">execute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="command.html#ischecked" class="tsd-kind-icon">is<wbr>Checked</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="command.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
 							</ul>
 						</section>
 					</div>
@@ -136,23 +130,22 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Delegate<wbr>Command<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, execute<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="delegatecommand.html" class="tsd-signature-type">DelegateCommand</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Command<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="command.html" class="tsd-signature-type">Command</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overwrites <a href="command.html">Command</a>.<a href="command.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L177">index.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L88">index.ts:88</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Construct a new delegate command.</p>
+									<p>Construct a new command.</p>
 								</div>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -165,34 +158,8 @@
 										</div>
 									</div>
 								</li>
-								<li>
-									<h5>execute: <span class="tsd-signature-type">function</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The function which executes the command logic.</p>
-										</div>
-									</div>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>args: <span class="tsd-signature-type">any</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="delegatecommand.html" class="tsd-signature-type">DelegateCommand</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="command.html" class="tsd-signature-type">Command</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -200,62 +167,20 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_checked" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _checked</h3>
-					<div class="tsd-signature tsd-kind-icon">_checked<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<a name="_id" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _id</h3>
+					<div class="tsd-signature tsd-kind-icon">_id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L272">index.ts:272</a></li>
+							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L166">index.ts:166</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_enabled" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _enabled</h3>
-					<div class="tsd-signature tsd-kind-icon">_enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L271">index.ts:271</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_execute" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _execute</h3>
-					<div class="tsd-signature tsd-kind-icon">_execute<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L273">index.ts:273</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>args: <span class="tsd-signature-type">any</span></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 					<a name="changedsignal" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> changed<wbr>Signal</h3>
 					<div class="tsd-signature tsd-kind-icon">changed<wbr>Signal<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Signal</span><span class="tsd-signature-symbol">&lt;</span><a href="command.html" class="tsd-signature-type">Command</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="command.html">Command</a>.<a href="command.html#changedsignal">changedSignal</a></p>
 						<ul>
 							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L88">index.ts:88</a></li>
 						</ul>
@@ -264,22 +189,21 @@
 						<div class="lead">
 							<p>A signal emitted when the command&#39;s state changes.</p>
 						</div>
-						<p><strong>See also:</strong> <a href="delegatecommand.html#changed">changed</a></p>
+						<p><strong>See also:</strong> <a href="command.html#changed">changed</a></p>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="changed" class="tsd-anchor"></a>
 					<h3>changed</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> changed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ISignal</span><span class="tsd-signature-symbol">&lt;</span><a href="command.html" class="tsd-signature-type">Command</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="command.html">Command</a>.<a href="command.html#changed">changed</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L107">index.ts:107</a></li>
 								</ul>
@@ -290,114 +214,21 @@
 								</div>
 								<h4 id="notes">Notes</h4>
 								<p>This should be emitted by a subclass as necessary.</p>
-								<p>This is a pure delegate to the <a href="delegatecommand.html#changedsignal">changedSignal</a>.</p>
+								<p>This is a pure delegate to the <a href="command.html#changedsignal">changedSignal</a>.</p>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ISignal</span><span class="tsd-signature-symbol">&lt;</span><a href="command.html" class="tsd-signature-type">Command</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="checked" class="tsd-anchor"></a>
-					<h3>checked</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> checked<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> checked<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L214">index.ts:214</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the checked state of the delegate command.</p>
-								</div>
-								<h4 id="notes">Notes</h4>
-								<p>This will emit the <a href="delegatecommand.html#changed">changed</a> signal if the state changes.</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L224">index.ts:224</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Set the checked state of the delegate command.</p>
-								</div>
-								<h4 id="notes">Notes</h4>
-								<p>This will emit the <a href="delegatecommand.html#changed">changed</a> signal if the state changes.</p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="enabled" class="tsd-anchor"></a>
-					<h3>enabled</h3>
-					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> enabled<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L193">index.ts:193</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the enabled state of the delegate command.</p>
-								</div>
-								<h4 id="notes">Notes</h4>
-								<p>This will emit the <a href="delegatecommand.html#changed">changed</a> signal if the state changes.</p>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L203">index.ts:203</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Set the enabled state of the delegate command.</p>
-								</div>
-								<h4 id="notes">Notes</h4>
-								<p>This will emit the <a href="delegatecommand.html#changed">changed</a> signal if the state changes.</p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>value: <span class="tsd-signature-type">boolean</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="id" class="tsd-anchor"></a>
 					<h3>id</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> id<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="command.html">Command</a>.<a href="command.html#id">id</a></p>
 								<ul>
 									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L117">index.ts:117</a></li>
 								</ul>
@@ -416,19 +247,18 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="execute" class="tsd-anchor"></a>
 					<h3>execute</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">execute<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/icommand.html">ICommand</a>.<a href="../interfaces/icommand.html#execute">execute</a></p>
-								<p>Overwrites <a href="command.html">Command</a>.<a href="command.html#execute">execute</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L267">index.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L164">index.ts:164</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -447,6 +277,7 @@
 										<h4 id="notes">Notes</h4>
 										<p>Calling <code>execute</code> when <code>isEnabled</code> returns <code>false</code> will result
 										in undefined behavior.</p>
+										<p>This abstract method must be implemented by a subclass.</p>
 									</div>
 								</li>
 							</ul>
@@ -454,19 +285,18 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="ischecked" class="tsd-anchor"></a>
 					<h3>is<wbr>Checked</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">is<wbr>Checked<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/icommand.html">ICommand</a>.<a href="../interfaces/icommand.html#ischecked">isChecked</a></p>
-								<p>Overwrites <a href="command.html">Command</a>.<a href="command.html#ischecked">isChecked</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L252">index.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L147">index.ts:147</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -477,23 +307,24 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the command is checked, <code>false</code> otherwise.</p>
 							<h4 id="notes">Notes</h4>
-							<p>This returns the command&#39;s <a href="delegatecommand.html#checked">checked</a> state.</p>
+							<p>A subclass may reimplement this method as needed. If the state
+							changes at runtime, the <a href="command.html#changed">changed</a> signal should be emitted.</p>
+							<p>The default implementation of this method returns <code>false</code>.</p>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="isenabled" class="tsd-anchor"></a>
 					<h3>is<wbr>Enabled</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
 						<li class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/icommand.html">ICommand</a>.<a href="../interfaces/icommand.html#isenabled">isEnabled</a></p>
-								<p>Overwrites <a href="command.html">Command</a>.<a href="command.html#isenabled">isEnabled</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L240">index.ts:240</a></li>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L132">index.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -504,7 +335,9 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 							<p><code>true</code> if the command is enabled, <code>false</code> otherwise.</p>
 							<h4 id="notes">Notes</h4>
-							<p>This returns the command&#39;s <a href="delegatecommand.html#enabled">enabled</a> state.</p>
+							<p>A subclass may reimplement this method as needed. If the state
+							changes at runtime, the <a href="command.html#changed">changed</a> signal should be emitted.</p>
+							<p>The default implementation of this method returns <code>true</code>.</p>
 						</li>
 					</ul>
 				</section>
@@ -520,57 +353,45 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="command.html" class="tsd-kind-icon">Command</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="commandregistry.html" class="tsd-kind-icon">Command<wbr>Registry</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="delegatecommand.html" class="tsd-kind-icon">Delegate<wbr>Command</a>
+						<a href="command.html" class="tsd-kind-icon">Command</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="delegatecommand.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="command.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="delegatecommand.html#_checked" class="tsd-kind-icon">_checked</a>
+								<a href="command.html#_id" class="tsd-kind-icon">_id</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="delegatecommand.html#_enabled" class="tsd-kind-icon">_enabled</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="command.html#changedsignal" class="tsd-kind-icon">changed<wbr>Signal</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="delegatecommand.html#_execute" class="tsd-kind-icon">_execute</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="command.html#changed" class="tsd-kind-icon">changed</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="delegatecommand.html#changedsignal" class="tsd-kind-icon">changed<wbr>Signal</a>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="command.html#id" class="tsd-kind-icon">id</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="delegatecommand.html#changed" class="tsd-kind-icon">changed</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="command.html#execute" class="tsd-kind-icon">execute</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="delegatecommand.html#checked" class="tsd-kind-icon">checked</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="command.html#ischecked" class="tsd-kind-icon">is<wbr>Checked</a>
 							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
-								<a href="delegatecommand.html#enabled" class="tsd-kind-icon">enabled</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="delegatecommand.html#id" class="tsd-kind-icon">id</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="delegatecommand.html#execute" class="tsd-kind-icon">execute</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="delegatecommand.html#ischecked" class="tsd-kind-icon">is<wbr>Checked</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="delegatecommand.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="command.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class">
+						<a href="commandregistry.html" class="tsd-kind-icon">Command<wbr>Registry</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="delegatecommand.html" class="tsd-kind-icon">Delegate<wbr>Command</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="../interfaces/icommand.html" class="tsd-kind-icon">ICommand</a>
 					</li>

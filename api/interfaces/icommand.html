@@ -85,6 +85,7 @@
 			<section class="tsd-panel">
 				<h3>Implemented by</h3>
 				<ul class="tsd-hierarchy">
+					<li><a href="../classes/command.html" class="tsd-signature-type">Command</a></li>
 					<li><a href="../classes/delegatecommand.html" class="tsd-signature-type">DelegateCommand</a></li>
 				</ul>
 			</section>
@@ -95,15 +96,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#canexecutechanged" class="tsd-kind-icon">can<wbr>Execute<wbr>Changed</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#changed" class="tsd-kind-icon">changed</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="icommand.html#id" class="tsd-kind-icon">id</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="icommand.html#canexecute" class="tsd-kind-icon">can<wbr>Execute</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="icommand.html#execute" class="tsd-kind-icon">execute</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="icommand.html#ischecked" class="tsd-kind-icon">is<wbr>Checked</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="icommand.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a></li>
 							</ul>
 						</section>
 					</div>
@@ -112,22 +114,21 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="canexecutechanged" class="tsd-anchor"></a>
-					<h3>can<wbr>Execute<wbr>Changed</h3>
-					<div class="tsd-signature tsd-kind-icon">can<wbr>Execute<wbr>Changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ISignal</span><span class="tsd-signature-symbol">&lt;</span><a href="icommand.html" class="tsd-signature-type">ICommand</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<a name="changed" class="tsd-anchor"></a>
+					<h3>changed</h3>
+					<div class="tsd-signature tsd-kind-icon">changed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ISignal</span><span class="tsd-signature-symbol">&lt;</span><a href="icommand.html" class="tsd-signature-type">ICommand</a><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L32">index.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L31">index.ts:31</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>A signal emitted when the command&#39;s <a href="icommand.html#canexecute">canExecute</a> state changes.</p>
+							<p>A signal emitted when the command&#39;s state changes.</p>
 						</div>
 						<h4 id="notes">Notes</h4>
 						<p>Consumers of the command can subscribe to this signal in order to
-							know when to re-query for the current executable state and update
-						their visual representations accordingly.</p>
+						update their visual representation of the command when it changes.</p>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -136,7 +137,7 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L40">index.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L39">index.ts:39</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -151,44 +152,6 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="canexecute" class="tsd-anchor"></a>
-					<h3>can<wbr>Execute</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">can<wbr>Execute<span class="tsd-signature-symbol">(</span>args<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L56">index.ts:56</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Test whether the command can execute in its current state.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>args: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The proposed arguments for the command. These should
-											be simple JSON types. If the command does not require arguments,
-										this may be <code>null</code>.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-							<p><code>true</code> if the command can execute with the given args,
-							<code>false</code> otherwise.</p>
-							<h4 id="notes">Notes</h4>
-							<p>When the potential result of this method changes at runtime, the
-							<a href="icommand.html#canexecutechanged">canExecuteChanged</a> signal should be emitted.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="execute" class="tsd-anchor"></a>
 					<h3>execute</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -198,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L69">index.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L74">index.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -211,16 +174,68 @@
 								<li>
 									<h5>args: <span class="tsd-signature-type">any</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>The arguments for the command. These should be
+										<p>The arguments for the command. The args should be
 											simple JSON types. If the command does not require arguments,
 										this may be <code>null</code>.</p>
 										<h4 id="notes">Notes</h4>
-										<p>Calling <code>execute</code> when <code>canExecute</code> returns <code>false</code> will result
+										<p>Calling <code>execute</code> when <code>isEnabled</code> returns <code>false</code> will result
 										in undefined behavior.</p>
 									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="ischecked" class="tsd-anchor"></a>
+					<h3>is<wbr>Checked</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Checked<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L61">index.ts:61</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Test whether the command is checked.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the command is checked, <code>false</code> otherwise.</p>
+							<h4 id="notes">Notes</h4>
+							<p>The <a href="icommand.html#changed">changed</a> signal should be emitted if the return value
+							changes at runtime.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="isenabled" class="tsd-anchor"></a>
+					<h3>is<wbr>Enabled</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Enabled<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/phosphorjs/phosphor-command/blob/HEAD/src/index.ts#L50">index.ts:50</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Test whether the command is enabled.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if the command is enabled, <code>false</code> otherwise.</p>
+							<h4 id="notes">Notes</h4>
+							<p>The <a href="icommand.html#changed">changed</a> signal should be emitted if the return value
+							changes at runtime.</p>
 						</li>
 					</ul>
 				</section>
@@ -237,6 +252,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class">
+						<a href="../classes/command.html" class="tsd-kind-icon">Command</a>
+					</li>
+					<li class=" tsd-kind-class">
 						<a href="../classes/commandregistry.html" class="tsd-kind-icon">Command<wbr>Registry</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -248,16 +266,19 @@
 						<a href="icommand.html" class="tsd-kind-icon">ICommand</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="icommand.html#canexecutechanged" class="tsd-kind-icon">can<wbr>Execute<wbr>Changed</a>
+								<a href="icommand.html#changed" class="tsd-kind-icon">changed</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="icommand.html#id" class="tsd-kind-icon">id</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="icommand.html#canexecute" class="tsd-kind-icon">can<wbr>Execute</a>
+								<a href="icommand.html#execute" class="tsd-kind-icon">execute</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="icommand.html#execute" class="tsd-kind-icon">execute</a>
+								<a href="icommand.html#ischecked" class="tsd-kind-icon">is<wbr>Checked</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="icommand.html#isenabled" class="tsd-kind-icon">is<wbr>Enabled</a>
 							</li>
 						</ul>
 					</li>
